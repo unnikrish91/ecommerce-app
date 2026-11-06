@@ -42,3 +42,6 @@ th { background: #f9fafb; }
 .status.pending { background: #fef9c3; color: #854d0e; }
 .pager { display: flex; gap: 8px; justify-content: center; margin-top: 24px; }
 @media (max-width: 760px) { .detail, .two-col { grid-template-columns: 1fr; } .nav-links { gap: 10px; font-size: 14px; } }
+.loader-wrap { display: flex; justify-content: center; align-items: center; min-height: 50vh; width: 100%; }
+.spinner { width: 56px; height: 56px; border: 5px solid #dbeafe; border-top-color: #2563eb; border-radius: 50%; animation: spin 0.8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }

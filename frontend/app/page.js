@@ -36,11 +36,15 @@ export default function Home() {
       </div>
 
       {error && <div className="error">{error} — is the PHP API running?</div>}
-      {loading && <p className="muted">Loading...</p>}
+      {loading && (
+        <div className="loader-wrap" role="status" aria-label="Loading products">
+          <div className="spinner" />
+        </div>
+      )}
       {!loading && !error && data.items.length === 0 && <p className="muted">No products found.</p>}
 
       <div className="grid">
-        {data.items.map((p) => (
+        {!loading && data.items.map((p) => (
           <div className="card" key={p.id}>
             <Link href={`/products/${p.id}`}>
               <img src={p.image_url || 'https://picsum.photos/seed/placeholder/600/400'} alt={p.name} />
